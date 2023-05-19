@@ -1,0 +1,33 @@
+
+package common;
+
+import java.util.Scanner;
+
+public class inOutUtils {
+    
+    //check input value is valid or not?
+    public static int inputInt(int min, int max){
+        Scanner sc = new Scanner(System.in);
+        int num = 0;
+        boolean isValid = false;
+        do{
+            try{
+                num = sc.nextInt();
+                if(num > min && num < max){
+                    isValid = true;
+                } else {
+                    System.out.println("Enter positive number!");
+                }
+            }catch(Exception e){
+                System.out.println("Please enter integer number");
+                sc.nextLine();
+            }
+        }while(!isValid);
+        return num;
+    }
+    
+    //display a message to screen
+    public static void printMsg(String msg){
+        System.out.println(msg);
+    }
+}
